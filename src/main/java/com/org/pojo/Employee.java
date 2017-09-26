@@ -1,17 +1,32 @@
 package com.org.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //import javax.persistence.Entity;
 
+@Entity
+@Table(name="emp500")
 public class Employee {
-	
-	
+	@Id
+	private int id;
 	private String name;
 	private String password;
 	private String email;
 	private String country;
 	
-	public Employee(String name, String password, String email, String country) {
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Employee( String name, String password, String email, String country) {
 		super();
+		
 		this.name = name;
 		this.password = password;
 		this.email = email;

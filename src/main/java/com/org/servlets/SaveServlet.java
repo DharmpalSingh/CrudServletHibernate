@@ -46,6 +46,7 @@ public class SaveServlet extends HttpServlet {
 	     sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
+		emp.setId(1001);
 		session.save(emp);
 		tx.commit();
 		session.close();
