@@ -1,6 +1,9 @@
 package com.org.pojo;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +13,7 @@ import javax.persistence.Table;
 @Table(name="emp500")
 public class Employee {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String name;
 	private String password;
@@ -22,6 +26,11 @@ public class Employee {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+
+	public Employee() {
+		super();
 	}
 
 	public Employee( String name, String password, String email, String country) {
