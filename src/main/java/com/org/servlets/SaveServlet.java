@@ -50,7 +50,6 @@ public class SaveServlet extends HttpServlet {
 		session.close();
 
 		PrintWriter writer = response.getWriter();
-
 		writer.println("Hello " + request.getSession(false).getAttribute("name"));
 		request.getRequestDispatcher("logInto.jsp").include(request, response);
 		writer.println("Employee added successfully");
